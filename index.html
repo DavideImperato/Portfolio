@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
     <style>
         *{
             font-family: 'Montserrat', sans-serif;
@@ -116,6 +117,9 @@
         .animazione{
             animation: fade-in-out 4s ease-in-out infinite;
         }
+        .animazioneMob{
+            animation: fade-in-out-Mob 4s ease-in-out infinite;
+        }
         .icon{
             display: flex;
             justify-content: center;
@@ -207,10 +211,36 @@
             border-radius: 20px;
             margin-bottom: 20px;
         }
+        /* INIZIO STYLE MOBILE */
+
+        .menuMobile{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #11caf0;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 0px 5px 10px;
+        }
+        .menuMobile:hover{
+            background-color: #0eb8da;
+        }
        
         
         /* animazioni */
         @keyframes fade-in-out {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes fade-in-out-Mob {
             0% {
                 opacity: 0;
             }
@@ -243,411 +273,829 @@
     </style>
 </head>
 <body class="vh-100 bg-body-secondary">
-    <div class="container p-5">
-        <div>
-            <ul class="menu shadow d-flex flex-column">
-                <li id="btnHome" name="Home" class="active"><i class="bi bi-house-door" ></i></li>
-                <li id="btnSudime" name="Su di me"><i class="bi bi-person"></i></li>
-                <li id="btnRiassunto" name="Riassunto"><i class="bi bi-mortarboard"></i></li>
-                <li id="btnProgetti" name="Progetti"><i class="bi bi-briefcase"></i></li>
-                <li id="btnContatti" name="Contatti"><i class="bi bi-envelope"></i></li>
-                
-                
-            </ul>
+<!-- MOBILE -->
+<!-- bg-body rounded-5 px-1 -->
+    <div id="mobile" class="container d-none">
+        <div id="menuBtnMobile" class="menuMobile" >
+            <i id="iconMenuMobile" class="bi bi-list fs-1"></i>
         </div>
-        
-        <div class="row  position-relative justify-content-center">
-            <div class="col-12 bg-info shadow cardCustom rounded-5 ">
-                <div class="row py-5 justify-content-start">
-                    
-                    <div class="col-4 h100 d-flex  text-center p-5 justify-content-center flex-column align-items-center" >
+        <div id="menuMobile" class="row vh-100 d-none justify-content-end " >
+            <div class="col-10 pt-5 bg-blue text-center">
+                <div class="row  justify-content-start">
+                
+                    <div class="col-12 h100 d-flex  text-center  justify-content-center flex-column align-items-center" >
                         <div class="boxImg text-center d-flex  justify-content-center flex-column align-content-center">
                             <img class="imageProfile" src="./media/davide.jpg" alt="">
                         </div>
                         
-                        <div class="pt-5 text-center">
+                        <div class="pt-2 pb-5 text-center">
                             <h2 class="text-white fw-bold">Davide Imperato</h2>
                             <p class="text-white">Full Stack Developer</p>
+                            <p id="btnHomeMob" class="text-white pt-5">HOME</p>
+                            <p id="btnSudimeMob" class="text-white">CHI SONO</p>
+                            <p id="btnRiassuntoMob" class="text-white">RIASSUNTO</p>
+                            <p id="btnProgettiMob" class="text-white">PROGETTI</p>
+                            <p id="btnContattiMob" class="text-white">CONTATTI</p>
+
+
+
                             
-                            <div class="d-flex justify-content-center">
+                            
+                            <div class="d-flex pt-4 justify-content-center">
                                 <a href="https://www.linkedin.com/in/davide-imperato-dev" target="_blank" rel="noopener noreferrer"><div class="icon"><i class="bi bi-linkedin"></i></div></a>
                                 <a href="https://github.com/DavideImperato"><div class="icon"><i class="bi bi-github"></i></div></a>
                             </div>
                             
                         </div>
-                        <div class="pt-5 text-center">
+                        <div class="pt-4 text-center">
                             <a href="./file/CV_Imperato_Davide.pdf" download="CV_Imperato_Davide"><button class="btn btnCustom">Download CV</button></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-8 bg-body-tertiary position-absolute top-0 end-0 shadow cardCustom h-100 rounded-5 ">
-                    <div class="row align-items-center overflow-y-auto overflow-x-hidden page justify-content-center  p-5">
-                        <!-- HOMEPAGE -->
-                        <div id="home" class="col-12 text-center">
-                            <h1 class="">Davide Imperato</h1>
-                            <h5 id="testo1" class="animazione">Web Developer</h5>  
-                            <h5 id="testo2" class="animazione">Frontend Developer</h5>
-                            <h5 id="testo3" class="animazione">Backend Developer</h5>
+            </div>
+        </div>
+        <!-- HOME PAGE MOBILE -->
+        <div id="homeMob" class="row vh-100  align-items-center">
+            <div  class="col-12 text-center">
+                <h1 class="">Davide Imperato</h1>
+                <h5 id="testo1mob" class="animazioneMob">Web Developer</h5>  
+                <h5 id="testo2mob" class="animazioneMob">Frontend Developer</h5>
+                <h5 id="testo3mob" class="animazioneMob">Backend Developer</h5>
+            </div>
+        </div>
+        <!-- CHI SONO MOBILE -->
+        <div id="chisonoMob" class="row vh-100 pt-5 d-none align-items-center">
+            <div  class="col-12 text-center">
+                <div class="container vh-100">
+                    <div class="row align-items-start mb-5 text-start">
+                        <h3>Su di <span class="infotext">Me</span></h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 infopersona text-start">
+                            <p>Sono uno Junior full stack developer con formazione lato front end e back end maturata in coding bootcamp, basato su una programmazione object oriented e metodologia agile Scrum. Competenze nella creazione e gestione di siti web con CRM come Shopify , Prestashop, WordPress e Magento. Persona dinamica e flessibile, con spiccate capacità di problem solving e di lavoro in team sviluppate dalle esperienze lavorative pregresse.</p>
                         </div>
-                        <!-- CHI SONO -->
-                        <div id="chisono" class="col-12 d-none text-center">
-                            <div class="container-fluid vh-100">
-                                <div class="row align-items-start mb-5 text-start">
-                                    <h3>Su di <span class="infotext">Me</span></h3>
+                        <div class="col-12">
+                            <div class="row text-start">
+                                <div class="infopersona py-2"><span class="text-blue fw-bold">Anni </span><span id="anni"></span> </div>
+                                <div class="infopersona py-2"><span class="text-blue fw-bold">Nazione </span><span>Italia</span> </div>
+                                <div class="infopersona py-2"><span class="text-blue fw-bold">Indirizzo </span><span>Via Volpicella,384,Napoli</span> </div>
+                                <div class="infopersona py-2"><span class="text-blue fw-bold">Email </span><span>davideimperato95@gmail.com</span> </div>
+                                <div class="infopersona py-2"><span class="text-blue fw-bold">Telefono </span><span>3663750354</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row mt-5 text-start">
+                            <h4 class="fw-bold">Cosa<span class="text-blue"> Faccio</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row  text-blue iconinfo text-start">
+                                        <i class="bi bi-shop"></i>
+                                    </div>
+                                    <div class="row  text-start">
+                                        <h6 class="text-black fw-bold">Ecommerce</h6>
+                                    </div>
+                                    <div class="row infopersona text-start">
+                                        <p>
+                                            creazione di negozi online su piattaforme come Shopify, WordPress, PrestaShop, Magento e con l'uso del framework Laravel. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row  text-blue iconinfo text-start">
+                                        <i class="bi bi-pc-display"></i>
+                                    </div>
+                                    <div class="row  text-start">
+                                        <h6 class="text-black fw-bold">Web Design</h6>
+                                    </div>
+                                    <div class="row infopersona text-start">
+                                        <p>
+                                            appassionato e creativo che ama sfruttare la potenza di HTML, CSS e JavaScript.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row  text-blue iconinfo text-start">
+                                        <i class="bi bi-globe-europe-africa"></i>
+                                    </div>
+                                    <div class="row  text-start">
+                                        <h6 class="text-black fw-bold">Applicazioni Web</h6>
+                                    </div>
+                                    <div class="row infopersona text-start">
+                                        <p>
+                                            Sviluppo applicazioni web dinamiche e potenti con Laravel, un framework PHP di alto livello. 
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row  text-blue iconinfo text-start">
+                                        <i class="bi bi-brush"></i>
+                                    </div>
+                                    <div class="row  text-start">
+                                        <h6 class="text-black fw-bold">Grafica</h6>
+                                    </div>
+                                    <div class="row infopersona text-start">
+                                        <p>
+                                            creazione di mockup, loghi aziendali e grafica base utilizzando Adobe Photoshop.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pb-5">
+                            <div class="row mt-5 text-start">
+                                <h4 class="fw-bold">Clienti</span></h3>
+                                </div>
+                                <div class="d-flex flex-row overflow-x-scroll">
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/vms.png" alt="" height="90px">
+                                    </span>
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/ilc.png" alt="" height="90px">
+                                    </span>
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/bevandadelre.png" alt="" height="90px">
+                                    </span>
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/queencoffee.png" alt="" height="90px">
+                                    </span>
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/silverposte.png" alt="" height="90px">
+                                    </span>
+                                    <span class="rounded-2 mx-2">
+                                        <img class="rounded-2 logocliente" src="./media/loghi_clienti/productiontrade.png" alt="" height="90px">
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+            </div>
+        </div>
+        <!-- RIASSUNTO MOBILE -->
+        <div id="riassuntoMob" class="row vh-100 pt-5 d-none align-items-center">
+            <div  class="col-12 text-center">
+            <div class="container-fluid vh-100">
+                <div class="row align-items-start mb-5 text-start">
+                    <h3>Riassunto <span class="infotext"></span></h3>
+                </div>
+                <div class="row">
+                    <div class="row text-start">
+
+                    </div>
+                    <!-- SEZIONE SINISTRA 1 -->
+                    <div class="col-12 infopersona text-start">
+                        <h4 class="fw-semibold">Istruzione<span class="text-blue"></span></h3>
+
+                            <div class="row justify-content-start">
+                                <div class="col-3 text-end">
+                                    <h6 class="infopersona fw-bold">2023</h6>
+                                    <p class="inforiassunto text-secondary">Aulab srl<br>Bari,Italia</p>
+                                </div>
+                                <div class="col-7 infobox text-start">
+                                    <p class="infopersona ">Coding Bootcamp per Full Stack developer junior</p>
+                                </div>
+                            </div>
+                            <div class="row justify-content-start">
+                                <div class="col-3 text-end">
+                                    <h6 class="infopersona fw-bold">2008</h6>
+                                    <p class="inforiassunto text-secondary">I.C. MARINO<br>Napoli,Italia</p>  
+                                </div>
+                                <div class="col-7 infobox text-start">
+                                    <p class="infopersona ">Scuola Secondaria di Primo Grado</p>
+                                </div>
+                            </div>
+                            <h4 class=" mt-5 fw-semibold">Esperienze<span class="text-blue"></span></h3>
+
+                                <!-- ESPERIENZA 1 -->
+                                <div class="row justify-content-start">
+                                    <div class="col-3 text-end">
+                                        <h6 class="infopersona fw-bold">2022-2023</h6>
+                                        <p class="inforiassunto text-secondary">Ibirealinv SL<br>Ibiza,Spagna</p>
+                                        
+                                    </div>
+                                    <div class="col-7 infobox text-start">
+                                        <h6 class="infopersona fw-bold">Resp. Contabilità e Logistica</h6>
+                                        <ul>
+                                            <li>Preparazione ed archiviazione Moduli Fiscali</li>
+                                            <li>Contabilità giornaliera di più punti vendita</li>
+                                            <li>Gestione Contabile di più punti vendita</li>
+                                            <li>Gestione e coordinamento delle operazioni logistiche con i vari punti vendita</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ESPERIENZA 2 -->
+                                <div class="row justify-content-start">
+                                    <div class="col-3 text-end">
+                                        <h6 class="infopersona fw-bold">2017-2022</h6>
+                                        <p class="inforiassunto text-secondary">3P srl<br>Napoli,Italia</p>
+                                        
+                                    </div>
+                                    <div class="col-7 infobox text-start">
+                                        <h6 class="infopersona fw-bold">Resp.CED, Logistica Commerciale e Web Manager</h6>
+                                        <ul>
+                                            <li>Gestione ed Elaborazione Ordini di tutti i Clienti del consorzio</li>
+                                            <li>Assistenza clienti</li>
+                                            <li>Gestione Logistica Commerciale</li>
+                                            <li>Gesione e Creazione Siti web con CRM Shopify, PrestaShop, WordPress e Magento</li>
+                                            <li>Gestione e Creazione Account Business eBay e Amazon</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ESPERIENZA 3 -->
+                                <div class="row justify-content-start">
+                                    <div class="col-3 text-end">
+                                        <h6 class="infopersona fw-bold">2015-2019</h6>
+                                        <p class="inforiassunto text-secondary">DeraShop di Imperato Davide<br>Napoli,Italia</p>
+                                        
+                                    </div>
+                                    <div class="col-7 infobox text-start">
+                                        <h6 class="infopersona fw-bold">CEO Founder</h6>
+                                        <ul>
+                                            <li>Gestione Amministrativa e Contabile</li>
+                                            <li>Approvvigionamento Merce</li>
+                                            <li>Gestione Magazzino</li>
+                                            <li>Gestione Vendite</li>
+                                            <li>Gestione eCommerce, e marketplace (Amazon , eBay e Cdiscount)</li>
+                                            <li>Gestione Clienti</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- ESPERIENZA 4 -->
+                                <div class="row justify-content-start">
+                                    <div class="col-3 text-end">
+                                        <h6 class="infopersona fw-bold">2013-2015</h6>
+                                        <p class="inforiassunto text-secondary">OrmeOutlet di D'alessio Paolo<br>Napoli,Italia</p>
+                                        
+                                    </div>
+                                    <div class="col-7 infobox text-start">
+                                        <h6 class="infopersona fw-bold">Resp. Vendita e Logistica</h6>
+                                        <ul>
+                                            <li>Contatto con spedizionieri e clienti</li>
+                                            <li>Gestione spedizioni e magazzino</li>
+                                            <li>Gestione marketplace (amazon, ebay, c-discount)</li>
+                                            <li>Gestione sito web (utilizzo del CMS magento)</li>
+                                            <li>Gestione Processo Aziendale ( dalla catalogazione articolo alla messa in vendita)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </div>
+                    <!-- SEZIONE DESTRA 1 -->
+                    <div class="col-12 mb-5 infopersona text-start">
+                        <h4 class="fw-semibold mt-5">Design<span class="text-blue"> Skills</span></h3>
+
+                        <img src="./media/photoshop.png" width="40px" alt="">
+
+
+                        <h4 class="fw-semibold mt-5">Coding<span class="text-blue"> Skills</span></h3>
+
+                        <div class="d-flex">
+                            <span><img src="./media/html.png" class="" height="40px" alt=""></span>
+                            <span><img src="./media/css.png" class="ms-3" height="40px" alt=""></span>
+                            <span><img src="./media/js.png" class="ms-3" height="40px" alt=""></span>
+                            <span><img src="./media/php.png" class="ms-3" height="40px" alt=""></span>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <span><img src="./media/laravel.png" class="" height="40px" alt=""></span>
+                            <span><img src="./media/shopify.png" class="ms-3" height="40px" alt=""></span>
+                            <span><img src="./media/wordpress.png" class="ms-3" height="40px" alt=""></span>
+                            <span><img src="./media/prestashop.png" class="ms-3" height="40px" alt=""></span>
+                        </div>
+                        <div class="d-flex mt-2">
+                            <span><img src="./media/magento.png" class="" height="40px" alt=""></span>
+                            
+                        </div>
+                        <h4 class="pt-5 mt-5 fw-semibold">Certificazioni<span class="text-blue"> </span></h3>
+                            <a href="https://www.credential.net/f0f49ad3-85e2-48a9-b210-fc001c1611bc#gs.6jm576">
+                                <div class="row mb-5 certificato mt-3  ">
+                                <div class="col-4 py-0 my-0" style="background-image: url(./media/Certificato_Aulab.jpg); background-size: contain; background-repeat: no-repeat;">
+
+                                </div>
+                                <div class="col-8 ps-1 m-0 text-start">
+                                    <h6>Full Stack Web Developer</h6>
+                                    <p>Hackademy87 - Aulab</p>
+                                </div>
+                                </div>
+                            </a>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- PROGETTI MOBILE -->
+        <div id="progettiMob" class="row pt-5 mb-5 pt-5 d-none align-items-center">
+            <div  class="col-12 mb-5 pb-5 text-center">
+                <div class="container-fluid vh-100">
+                    <div class="row align-items-start mb-5 text-start">
+                        <h3>Progetti <span class="infotext"></span></h3>
+                    </div>
+                    <div class="row mb-5 text-start">
+                        <h4 class="fw-bold">Hackademy<span class="text-blue">87</span></h3>
+
+                        <div class="col-12 text-center  p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/retrohunters-min.png); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">RetroHunters</h5>
+                        </div>
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/presto1-min.png); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">Presto 1</h5>
+                        </div>
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/blue-min.png); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">Progetto Blue</h5>
+                        </div>
+                        <div class="col-12 text-center mb-5 p-0 col-md-4 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/red-min.png); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">Progetto Red</h5>
+                        </div>                                    
+                    </div>
+                    <div class="row mt-5 text-start">
+                        <h4 class="fw-bold">Freelancer<span class="text-blue"> Dev</span></h3>
+
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/vms-min.jpg); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">VMS-Store</h5>
+                        </div>
+                        <div class="col-12 text-center p-0 col-md-4 mb-5text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/ilc-min.jpeg); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2"> ILC Group</h5>
+                        </div>
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/productiontrade-min.jpg); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">Production&Trade</h5>
+                        </div>
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/silver-min.jpg); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">Silver Poste Private</h5>
+                        </div>   
+                        <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                            <div class="boxImageCard" style="background-image: url(./media/progetti/queen-min.jpeg); background-position: top;background-size: cover;"></div>
+                            <h5 class="text-black p-0 mt-2">QueenCoffee</h5>
+                        </div>        
+                                                    
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- CONTATTO MOBILE -->
+        <div id="contattoMob" class="row pt-5 mb-5 d-none align-items-center">
+            <div  class="col-12 text-center">
+                <div class="container-fluid ">
+                    <div class="row align-items-start mb-5 text-start">
+                        <h3>Contatto <span class="infotext"></span></h3>
+                    </div>
+                    <div class="row mb-5 text-start">
+                        <div class="col-12 p-3 ">
+                            <div class="boxContact py-2 text-center">
+                                <i class="bi fs-1 text-blue  bi-geo-alt"></i>
+                                <h6 class="pt-3">Napoli,Italia</h6>
+                            </div>
+                            <div class="boxContact py-2 text-center">
+                                <i class="bi fs-1 text-blue  bi-telephone"></i>
+                                <h6 class="pt-3">+39 3663750354</h6>
+                            </div>
+                            <div class="boxContact py-2 text-center">
+                                <i class="bi fs-1 text-blue  bi-envelope"></i>
+                                <h6 class="pt-3">davideimperato95<br>@gmail.com</h6>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center  p-3 mb-5 text-start">
+                            <form id="emailForm">
+                                <div class="row">
+                                    <div class="col-12"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.0271869160024!2d14.326394899999999!3d40.8493269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133ba7cea3c8353d%3A0xb847787936573830!2sVia%20Luigi%20Volpicella%2C%20384%2C%2080147%20Napoli%20NA!5e0!3m2!1sit!2sit!4v1696500564082!5m2!1sit!2sit" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-7 infopersona text-start">
-                                        <p>Sono uno Junior full stack developer con formazione lato front end e back end maturata in coding bootcamp, basato su una programmazione object oriented e metodologia agile Scrum. Competenze nella creazione e gestione di siti web con CRM come Shopify , Prestashop, WordPress e Magento. Persona dinamica e flessibile, con spiccate capacità di problem solving e di lavoro in team sviluppate dalle esperienze lavorative pregresse.</p>
+                                    <div class="col-12 pt-5">
+                                        <input class="form-control" type="text" id="nome" placeholder="Nome" name="nome" required><br>
+
+                                        <input class="form-control" type="email" id="email" placeholder="email" name="email" required><br>
+                                        <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" value="+39" required><br>
                                     </div>
-                                    <div class="col-5">
-                                        <div class="row text-start">
-                                            <div class="infopersona py-2"><span class="text-blue fw-bold">Anni </span><span id="anni"></span> </div>
-                                            <div class="infopersona py-2"><span class="text-blue fw-bold">Nazione </span><span>Italia</span> </div>
-                                            <div class="infopersona py-2"><span class="text-blue fw-bold">Indirizzo </span><span>Via Volpicella,384,Napoli</span> </div>
-                                            <div class="infopersona py-2"><span class="text-blue fw-bold">Email </span><span>davideimperato95@gmail.com</span> </div>
-                                            <div class="infopersona py-2"><span class="text-blue fw-bold">Telefono </span><span>3663750354</span> </div>
+                                    <div class="col-12 pt-5">
+                                        <textarea class="form-control" id="messaggio" name="messaggio" placeholder="Messaggio" rows="6" required></textarea><br></div>
+                                </div>
+
+                                <input class="btn btnCustom" type="submit" value="Invia">
+                                </form>
+                        </div>                              
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- DESKTOP -->
+
+<div id="desktop" class="container d-none p-5">
+    <div>
+        <ul class="menu shadow d-flex flex-column">
+            <li id="btnHome" name="Home" class="active"><i class="bi bi-house-door" ></i></li>
+            <li id="btnSudime" name="Su di me"><i class="bi bi-person"></i></li>
+            <li id="btnRiassunto" name="Riassunto"><i class="bi bi-mortarboard"></i></li>
+            <li id="btnProgetti" name="Progetti"><i class="bi bi-briefcase"></i></li>
+            <li id="btnContatti" name="Contatti"><i class="bi bi-envelope"></i></li>
+            
+        </ul>
+    </div>
+    
+    <div class="row px-3 position-relative justify-content-center">
+        <div class="col-12 bg-info shadow cardCustom rounded-5 ">
+            <div class="row py-5 justify-content-start">
+                
+                <div class="col-4 h100 d-flex  text-center p-5 justify-content-center flex-column align-items-center" >
+                    <div class="boxImg text-center d-flex  justify-content-center flex-column align-content-center">
+                        <img class="imageProfile" src="./media/davide.jpg" alt="">
+                    </div>
+                    
+                    <div class="pt-5 text-center">
+                        <h2 class="text-white fw-bold">Davide Imperato</h2>
+                        <p class="text-white">Full Stack Developer</p>
+                        
+                        <div class="d-flex justify-content-center">
+                            <a href="https://www.linkedin.com/in/davide-imperato-dev" target="_blank" rel="noopener noreferrer"><div class="icon"><i class="bi bi-linkedin"></i></div></a>
+                            <a href="https://github.com/DavideImperato"><div class="icon"><i class="bi bi-github"></i></div></a>
+                        </div>
+                        
+                    </div>
+                    <div class="pt-5 text-center">
+                        <a href="./file/CV_Imperato_Davide.pdf" download="CV_Imperato_Davide"><button class="btn btnCustom">Download CV</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 bg-body-tertiary position-absolute top-0 end-0 me-3 shadow cardCustom h-100 rounded-5 ">
+                <div class="row align-items-center overflow-y-auto overflow-x-hidden page justify-content-center  p-5">
+                    <!-- HOMEPAGE -->
+                    <div id="home" class="col-12 text-center">
+                        <h1 class="">Davide Imperato</h1>
+                        <h5 id="testo1" class="animazione">Web Developer</h5>  
+                        <h5 id="testo2" class="animazione">Frontend Developer</h5>
+                        <h5 id="testo3" class="animazione">Backend Developer</h5>
+                    </div>
+                    <!-- CHI SONO -->
+                    <div id="chisono" class="col-12 d-none text-center">
+                        <div class="container-fluid vh-100">
+                            <div class="row align-items-start mb-5 text-start">
+                                <h3>Su di <span class="infotext">Me</span></h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-7 infopersona text-start">
+                                    <p>Sono uno Junior full stack developer con formazione lato front end e back end maturata in coding bootcamp, basato su una programmazione object oriented e metodologia agile Scrum. Competenze nella creazione e gestione di siti web con CRM come Shopify , Prestashop, WordPress e Magento. Persona dinamica e flessibile, con spiccate capacità di problem solving e di lavoro in team sviluppate dalle esperienze lavorative pregresse.</p>
+                                </div>
+                                <div class="col-5">
+                                    <div class="row text-start">
+                                        <div class="infopersona py-2"><span class="text-blue fw-bold">Anni </span><span id="anni"></span> </div>
+                                        <div class="infopersona py-2"><span class="text-blue fw-bold">Nazione </span><span>Italia</span> </div>
+                                        <div class="infopersona py-2"><span class="text-blue fw-bold">Indirizzo </span><span>Via Volpicella,384,Napoli</span> </div>
+                                        <div class="infopersona py-2"><span class="text-blue fw-bold">Email </span><span>davideimperato95@gmail.com</span> </div>
+                                        <div class="infopersona py-2"><span class="text-blue fw-bold">Telefono </span><span>3663750354</span> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="row mt-5 text-start">
+                                    <h4 class="fw-bold">Cosa<span class="text-blue"> Faccio</span></h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="row  text-blue iconinfo text-start">
+                                                <i class="bi bi-shop"></i>
+                                            </div>
+                                            <div class="row  text-start">
+                                                <h6 class="text-black fw-bold">Ecommerce</h6>
+                                            </div>
+                                            <div class="row infopersona text-start">
+                                                <p>
+                                                    creazione di negozi online su piattaforme come Shopify, WordPress, PrestaShop, Magento e con l'uso del framework Laravel. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row  text-blue iconinfo text-start">
+                                                <i class="bi bi-pc-display"></i>
+                                            </div>
+                                            <div class="row  text-start">
+                                                <h6 class="text-black fw-bold">Web Design</h6>
+                                            </div>
+                                            <div class="row infopersona text-start">
+                                                <p>
+                                                    appassionato e creativo che ama sfruttare la potenza di HTML, CSS e JavaScript.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row  text-blue iconinfo text-start">
+                                                <i class="bi bi-globe-europe-africa"></i>
+                                            </div>
+                                            <div class="row  text-start">
+                                                <h6 class="text-black fw-bold">Applicazioni Web</h6>
+                                            </div>
+                                            <div class="row infopersona text-start">
+                                                <p>
+                                                    Sviluppo applicazioni web dinamiche e potenti con Laravel, un framework PHP di alto livello. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row  text-blue iconinfo text-start">
+                                                <i class="bi bi-brush"></i>
+                                            </div>
+                                            <div class="row  text-start">
+                                                <h6 class="text-black fw-bold">Grafica</h6>
+                                            </div>
+                                            <div class="row infopersona text-start">
+                                                <p>
+                                                    creazione di mockup, loghi aziendali e grafica base utilizzando Adobe Photoshop.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="row mt-5 text-start">
-                                        <h4 class="fw-bold">Cosa<span class="text-blue"> Faccio</span></h3>
+                                        <h4 class="fw-bold">Clienti</span></h3>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="row  text-blue iconinfo text-start">
-                                                    <i class="bi bi-shop"></i>
-                                                </div>
-                                                <div class="row  text-start">
-                                                    <h6 class="text-black fw-bold">Ecommerce</h6>
-                                                </div>
-                                                <div class="row infopersona text-start">
-                                                    <p>
-                                                        creazione di negozi online su piattaforme come Shopify, WordPress, PrestaShop, Magento e con l'uso del framework Laravel. 
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="row  text-blue iconinfo text-start">
-                                                    <i class="bi bi-pc-display"></i>
-                                                </div>
-                                                <div class="row  text-start">
-                                                    <h6 class="text-black fw-bold">Web Design</h6>
-                                                </div>
-                                                <div class="row infopersona text-start">
-                                                    <p>
-                                                        appassionato e creativo che ama sfruttare la potenza di HTML, CSS e JavaScript.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="row  text-blue iconinfo text-start">
-                                                    <i class="bi bi-globe-europe-africa"></i>
-                                                </div>
-                                                <div class="row  text-start">
-                                                    <h6 class="text-black fw-bold">Applicazioni Web</h6>
-                                                </div>
-                                                <div class="row infopersona text-start">
-                                                    <p>
-                                                        Sviluppo applicazioni web dinamiche e potenti con Laravel, un framework PHP di alto livello. 
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="row  text-blue iconinfo text-start">
-                                                    <i class="bi bi-brush"></i>
-                                                </div>
-                                                <div class="row  text-start">
-                                                    <h6 class="text-black fw-bold">Grafica</h6>
-                                                </div>
-                                                <div class="row infopersona text-start">
-                                                    <p>
-                                                        creazione di mockup, loghi aziendali e grafica base utilizzando Adobe Photoshop.
-                                                    </p>
-                                                </div>
-                                            </div>
+                                        <div class="d-flex flex-row overflow-x-scroll">
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/vms.png" alt="" height="90px">
+                                            </span>
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/ilc.png" alt="" height="90px">
+                                            </span>
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/bevandadelre.png" alt="" height="90px">
+                                            </span>
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/queencoffee.png" alt="" height="90px">
+                                            </span>
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/silverposte.png" alt="" height="90px">
+                                            </span>
+                                            <span class="rounded-2 mx-2">
+                                                <img class="rounded-2 logocliente" src="./media/loghi_clienti/productiontrade.png" alt="" height="90px">
+                                            </span>
                                         </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                    </div>
+                    <!-- RIASSUNTO -->
+                    <div id="riassunto" class="col-12 d-none text-center">
+                                <div class="container-fluid vh-100">
+                                    <div class="row align-items-start mb-5 text-start">
+                                        <h3>Riassunto <span class="infotext"></span></h3>
                                     </div>
                                     <div class="row">
-                                        <div class="row mt-5 text-start">
-                                            <h4 class="fw-bold">Clienti</span></h3>
+                                        <div class="row text-start">
+
+                                        </div>
+                                        <!-- SEZIONE SINISTRA 1 -->
+                                        <div class="col-7 infopersona text-start">
+                                            <h4 class="fw-semibold">Istruzione<span class="text-blue"></span></h3>
+
+                                                <div class="row justify-content-start">
+                                                    <div class="col-3 text-end">
+                                                        <h6 class="infopersona fw-bold">2023</h6>
+                                                        <p class="inforiassunto text-secondary">Aulab srl<br>Bari,Italia</p>
+                                                    </div>
+                                                    <div class="col-7 infobox text-start">
+                                                        <p class="infopersona ">Coding Bootcamp per Full Stack developer junior</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-start">
+                                                    <div class="col-3 text-end">
+                                                        <h6 class="infopersona fw-bold">2008</h6>
+                                                        <p class="inforiassunto text-secondary">I.C. MARINO<br>Napoli,Italia</p>  
+                                                    </div>
+                                                    <div class="col-7 infobox text-start">
+                                                        <p class="infopersona ">Scuola Secondaria di Primo Grado</p>
+                                                    </div>
+                                                </div>
+                                                <h4 class=" mt-5 fw-semibold">Esperienze<span class="text-blue"></span></h3>
+
+                                                    <!-- ESPERIENZA 1 -->
+                                                    <div class="row justify-content-start">
+                                                        <div class="col-3 text-end">
+                                                            <h6 class="infopersona fw-bold">2022-2023</h6>
+                                                            <p class="inforiassunto text-secondary">Ibirealinv SL<br>Ibiza,Spagna</p>
+                                                            
+                                                        </div>
+                                                        <div class="col-7 infobox text-start">
+                                                            <h6 class="infopersona fw-bold">Resp. Contabilità e Logistica</h6>
+                                                            <ul>
+                                                                <li>Preparazione ed archiviazione Moduli Fiscali</li>
+                                                                <li>Contabilità giornaliera di più punti vendita</li>
+                                                                <li>Gestione Contabile di più punti vendita</li>
+                                                                <li>Gestione e coordinamento delle operazioni logistiche con i vari punti vendita</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- ESPERIENZA 2 -->
+                                                    <div class="row justify-content-start">
+                                                        <div class="col-3 text-end">
+                                                            <h6 class="infopersona fw-bold">2017-2022</h6>
+                                                            <p class="inforiassunto text-secondary">3P srl<br>Napoli,Italia</p>
+                                                            
+                                                        </div>
+                                                        <div class="col-7 infobox text-start">
+                                                            <h6 class="infopersona fw-bold">Resp.CED, Logistica Commerciale e Web Manager</h6>
+                                                            <ul>
+                                                                <li>Gestione ed Elaborazione Ordini di tutti i Clienti del consorzio</li>
+                                                                <li>Assistenza clienti</li>
+                                                                <li>Gestione Logistica Commerciale</li>
+                                                                <li>Gesione e Creazione Siti web con CRM Shopify, PrestaShop, WordPress e Magento</li>
+                                                                <li>Gestione e Creazione Account Business eBay e Amazon</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- ESPERIENZA 3 -->
+                                                    <div class="row justify-content-start">
+                                                        <div class="col-3 text-end">
+                                                            <h6 class="infopersona fw-bold">2015-2019</h6>
+                                                            <p class="inforiassunto text-secondary">DeraShop di Imperato Davide<br>Napoli,Italia</p>
+                                                            
+                                                        </div>
+                                                        <div class="col-7 infobox text-start">
+                                                            <h6 class="infopersona fw-bold">CEO Founder</h6>
+                                                            <ul>
+                                                                <li>Gestione Amministrativa e Contabile</li>
+                                                                <li>Approvvigionamento Merce</li>
+                                                                <li>Gestione Magazzino</li>
+                                                                <li>Gestione Vendite</li>
+                                                                <li>Gestione eCommerce, e marketplace (Amazon , eBay e Cdiscount)</li>
+                                                                <li>Gestione Clienti</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- ESPERIENZA 4 -->
+                                                    <div class="row justify-content-start">
+                                                        <div class="col-3 text-end">
+                                                            <h6 class="infopersona fw-bold">2013-2015</h6>
+                                                            <p class="inforiassunto text-secondary">OrmeOutlet di D'alessio Paolo<br>Napoli,Italia</p>
+                                                            
+                                                        </div>
+                                                        <div class="col-7 infobox text-start">
+                                                            <h6 class="infopersona fw-bold">Resp. Vendita e Logistica</h6>
+                                                            <ul>
+                                                                <li>Contatto con spedizionieri e clienti</li>
+                                                                <li>Gestione spedizioni e magazzino</li>
+                                                                <li>Gestione marketplace (amazon, ebay, c-discount)</li>
+                                                                <li>Gestione sito web (utilizzo del CMS magento)</li>
+                                                                <li>Gestione Processo Aziendale ( dalla catalogazione articolo alla messa in vendita)</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <!-- SEZIONE DESTRA 1 -->
+                                        <div class="col-5 infopersona text-start">
+                                            <h4 class="fw-semibold">Design<span class="text-blue"> Skills</span></h3>
+
+                                            <img src="./media/photoshop.png" width="40px" alt="">
+
+
+                                            <h4 class="fw-semibold mt-5">Coding<span class="text-blue"> Skills</span></h3>
+
+                                            <div class="d-flex">
+                                                <span><img src="./media/html.png" class="" height="40px" alt=""></span>
+                                                <span><img src="./media/css.png" class="ms-3" height="40px" alt=""></span>
+                                                <span><img src="./media/js.png" class="ms-3" height="40px" alt=""></span>
+                                                <span><img src="./media/php.png" class="ms-3" height="40px" alt=""></span>
                                             </div>
-                                            <div class="d-flex flex-row overflow-x-scroll">
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/vms.png" alt="" height="90px">
-                                                </span>
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/ilc.png" alt="" height="90px">
-                                                </span>
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/bevandadelre.png" alt="" height="90px">
-                                                </span>
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/queencoffee.png" alt="" height="90px">
-                                                </span>
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/silverposte.png" alt="" height="90px">
-                                                </span>
-                                                <span class="rounded-2 mx-2">
-                                                    <img class="rounded-2 logocliente" src="./media/loghi_clienti/productiontrade.png" alt="" height="90px">
-                                                </span>
+                                            <div class="d-flex mt-2">
+                                                <span><img src="./media/laravel.png" class="" height="40px" alt=""></span>
+                                                <span><img src="./media/shopify.png" class="ms-3" height="40px" alt=""></span>
+                                                <span><img src="./media/wordpress.png" class="ms-3" height="40px" alt=""></span>
+                                                <span><img src="./media/prestashop.png" class="ms-3" height="40px" alt=""></span>
                                             </div>
+                                            <div class="d-flex mt-2">
+                                                <span><img src="./media/magento.png" class="" height="40px" alt=""></span>
+                                                
+                                            </div>
+                                            <h4 class="pt-5 mt-5 fw-semibold">Certificazioni<span class="text-blue"> </span></h3>
+                                                <a href="https://www.credential.net/f0f49ad3-85e2-48a9-b210-fc001c1611bc#gs.6jm576">
+                                                    <div class="row mb-5 certificato mt-3  ">
+                                                    <div class="col-4 py-0 my-0" style="background-image: url(./media/Certificato_Aulab.jpg); background-size: contain; background-repeat: no-repeat;">
+
+                                                    </div>
+                                                    <div class="col-8 ps-1 m-0 text-start">
+                                                        <h6>Full Stack Web Developer</h6>
+                                                        <p>Hackademy87 - Aulab</p>
+                                                    </div>
+                                                    </div>
+                                                </a>
                                         </div>
                                         
                                         
+                                        
                                     </div>
-                        </div>
-                        <!-- RIASSUNTO -->
-                        <div id="riassunto" class="col-12 d-none text-center">
-                                    <div class="container-fluid vh-100">
-                                        <div class="row align-items-start mb-5 text-start">
-                                            <h3>Riassunto <span class="infotext"></span></h3>
-                                        </div>
-                                        <div class="row">
-                                            <div class="row text-start">
-
-                                            </div>
-                                            <!-- SEZIONE SINISTRA 1 -->
-                                            <div class="col-7 infopersona text-start">
-                                                <h4 class="fw-semibold">Istruzione<span class="text-blue"></span></h3>
-
-                                                    <div class="row justify-content-start">
-                                                        <div class="col-3 text-end">
-                                                            <h6 class="infopersona fw-bold">2023</h6>
-                                                            <p class="inforiassunto text-secondary">Aulab srl<br>Bari,Italia</p>
-                                                        </div>
-                                                        <div class="col-7 infobox text-start">
-                                                            <p class="infopersona ">Coding Bootcamp per Full Stack developer junior</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row justify-content-start">
-                                                        <div class="col-3 text-end">
-                                                            <h6 class="infopersona fw-bold">2008</h6>
-                                                            <p class="inforiassunto text-secondary">I.C. MARINO<br>Napoli,Italia</p>  
-                                                        </div>
-                                                        <div class="col-7 infobox text-start">
-                                                            <p class="infopersona ">Scuola Secondaria di Primo Grado</p>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class=" mt-5 fw-semibold">Esperienze<span class="text-blue"></span></h3>
-
-                                                        <!-- ESPERIENZA 1 -->
-                                                        <div class="row justify-content-start">
-                                                            <div class="col-3 text-end">
-                                                                <h6 class="infopersona fw-bold">2022-2023</h6>
-                                                                <p class="inforiassunto text-secondary">Ibirealinv SL<br>Ibiza,Spagna</p>
-                                                                
-                                                            </div>
-                                                            <div class="col-7 infobox text-start">
-                                                                <h6 class="infopersona fw-bold">Resp. Contabilità e Logistica</h6>
-                                                                <ul>
-                                                                    <li>Preparazione ed archiviazione Moduli Fiscali</li>
-                                                                    <li>Contabilità giornaliera di più punti vendita</li>
-                                                                    <li>Gestione Contabile di più punti vendita</li>
-                                                                    <li>Gestione e coordinamento delle operazioni logistiche con i vari punti vendita</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <!-- ESPERIENZA 2 -->
-                                                        <div class="row justify-content-start">
-                                                            <div class="col-3 text-end">
-                                                                <h6 class="infopersona fw-bold">2017-2022</h6>
-                                                                <p class="inforiassunto text-secondary">3P srl<br>Napoli,Italia</p>
-                                                                
-                                                            </div>
-                                                            <div class="col-7 infobox text-start">
-                                                                <h6 class="infopersona fw-bold">Resp.CED, Logistica Commerciale e Web Manager</h6>
-                                                                <ul>
-                                                                    <li>Gestione ed Elaborazione Ordini di tutti i Clienti del consorzio</li>
-                                                                    <li>Assistenza clienti</li>
-                                                                    <li>Gestione Logistica Commerciale</li>
-                                                                    <li>Gesione e Creazione Siti web con CRM Shopify, PrestaShop, WordPress e Magento</li>
-                                                                    <li>Gestione e Creazione Account Business eBay e Amazon</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <!-- ESPERIENZA 3 -->
-                                                        <div class="row justify-content-start">
-                                                            <div class="col-3 text-end">
-                                                                <h6 class="infopersona fw-bold">2015-2019</h6>
-                                                                <p class="inforiassunto text-secondary">DeraShop di Imperato Davide<br>Napoli,Italia</p>
-                                                                
-                                                            </div>
-                                                            <div class="col-7 infobox text-start">
-                                                                <h6 class="infopersona fw-bold">CEO Founder</h6>
-                                                                <ul>
-                                                                    <li>Gestione Amministrativa e Contabile</li>
-                                                                    <li>Approvvigionamento Merce</li>
-                                                                    <li>Gestione Magazzino</li>
-                                                                    <li>Gestione Vendite</li>
-                                                                    <li>Gestione eCommerce, e marketplace (Amazon , eBay e Cdiscount)</li>
-                                                                    <li>Gestione Clienti</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <!-- ESPERIENZA 4 -->
-                                                        <div class="row justify-content-start">
-                                                            <div class="col-3 text-end">
-                                                                <h6 class="infopersona fw-bold">2013-2015</h6>
-                                                                <p class="inforiassunto text-secondary">OrmeOutlet di D'alessio Paolo<br>Napoli,Italia</p>
-                                                                
-                                                            </div>
-                                                            <div class="col-7 infobox text-start">
-                                                                <h6 class="infopersona fw-bold">Resp. Vendita e Logistica</h6>
-                                                                <ul>
-                                                                    <li>Contatto con spedizionieri e clienti</li>
-                                                                    <li>Gestione spedizioni e magazzino</li>
-                                                                    <li>Gestione marketplace (amazon, ebay, c-discount)</li>
-                                                                    <li>Gestione sito web (utilizzo del CMS magento)</li>
-                                                                    <li>Gestione Processo Aziendale ( dalla catalogazione articolo alla messa in vendita)</li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                            </div>
-                                            <!-- SEZIONE DESTRA 1 -->
-                                            <div class="col-5 infopersona text-start">
-                                                <h4 class="fw-semibold">Design<span class="text-blue"> Skills</span></h3>
-
-                                                <img src="./media/photoshop.png" width="40px" alt="">
-
-
-                                                <h4 class="fw-semibold mt-5">Coding<span class="text-blue"> Skills</span></h3>
-
-                                                <div class="d-flex">
-                                                    <span><img src="./media/html.png" class="" height="40px" alt=""></span>
-                                                    <span><img src="./media/css.png" class="ms-3" height="40px" alt=""></span>
-                                                    <span><img src="./media/js.png" class="ms-3" height="40px" alt=""></span>
-                                                    <span><img src="./media/php.png" class="ms-3" height="40px" alt=""></span>
-                                                </div>
-                                                <div class="d-flex mt-2">
-                                                    <span><img src="./media/laravel.png" class="" height="40px" alt=""></span>
-                                                    <span><img src="./media/shopify.png" class="ms-3" height="40px" alt=""></span>
-                                                    <span><img src="./media/wordpress.png" class="ms-3" height="40px" alt=""></span>
-                                                    <span><img src="./media/prestashop.png" class="ms-3" height="40px" alt=""></span>
-                                                </div>
-                                                <div class="d-flex mt-2">
-                                                    <span><img src="./media/magento.png" class="" height="40px" alt=""></span>
-                                                    
-                                                </div>
-                                                <h4 class="pt-5 mt-5 fw-semibold">Certificazioni<span class="text-blue"> </span></h3>
-                                                    <a href="https://www.credential.net/f0f49ad3-85e2-48a9-b210-fc001c1611bc#gs.6jm576">
-                                                        <div class="row mb-5 certificato mt-3  ">
-                                                        <div class="col-4 py-0 my-0" style="background-image: url(./media/Certificato_Aulab.jpg); background-size: contain; background-repeat: no-repeat;">
-    
-                                                        </div>
-                                                        <div class="col-8 ps-1 m-0 text-start">
-                                                            <h6>Full Stack Web Developer</h6>
-                                                            <p>Hackademy87 - Aulab</p>
-                                                        </div>
-                                                        </div>
-                                                    </a>
-                                            </div>
-                                            
-                                          
-                                            
-                                        </div>
-                                    </div>
-                        </div>
-                        <!-- PROGETTI -->
-                        <div id="progetti" class="col-12 d-none text-center">
-                            <div class="container-fluid vh-100">
-                                <div class="row align-items-start mb-5 text-start">
-                                    <h3>Progetti <span class="infotext"></span></h3>
                                 </div>
-                                <div class="row mb-5 text-start">
-                                    <h4 class="fw-bold">Hackademy<span class="text-blue">87</span></h3>
+                    </div>
+                    <!-- PROGETTI -->
+                    <div id="progetti" class="col-12 d-none text-center">
+                        <div class="container-fluid vh-100">
+                            <div class="row align-items-start mb-5 text-start">
+                                <h3>Progetti <span class="infotext"></span></h3>
+                            </div>
+                            <div class="row mb-5 text-start">
+                                <h4 class="fw-bold">Hackademy<span class="text-blue">87</span></h3>
 
-                                    <div class="col-12 text-center  p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/retrohunters-min.png); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">RetroHunters</h5>
-                                    </div>
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/presto1-min.png); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">Presto 1</h5>
-                                    </div>
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/blue-min.png); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">Progetto Blue</h5>
-                                    </div>
-                                    <div class="col-12 text-center mb-5 p-0 col-md-4 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/red-min.png); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">Progetto Red</h5>
-                                    </div>                                    
+                                <div class="col-12 text-center  p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/retrohunters-min.png); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">RetroHunters</h5>
                                 </div>
-                                <div class="row mt-5 text-start">
-                                    <h4 class="fw-bold">Freelancer<span class="text-blue"> Dev</span></h3>
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/presto1-min.png); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">Presto 1</h5>
+                                </div>
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/blue-min.png); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">Progetto Blue</h5>
+                                </div>
+                                <div class="col-12 text-center mb-5 p-0 col-md-4 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/red-min.png); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">Progetto Red</h5>
+                                </div>                                    
+                            </div>
+                            <div class="row mt-5 text-start">
+                                <h4 class="fw-bold">Freelancer<span class="text-blue"> Dev</span></h3>
 
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/vms-min.jpg); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">VMS-Store</h5>
-                                    </div>
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/ilc-min.jpeg); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2"> ILC Group</h5>
-                                    </div>
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/productiontrade-min.jpg); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">Production&Trade</h5>
-                                    </div>
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/silver-min.jpg); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">Silver Poste Private</h5>
-                                    </div>   
-                                    <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
-                                        <div class="boxImageCard" style="background-image: url(./media/progetti/queen-min.jpeg); background-position: top;background-size: cover;"></div>
-                                        <h5 class="text-black p-0 mt-2">QueenCoffee</h5>
-                                    </div>        
-                                                             
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/vms-min.jpg); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">VMS-Store</h5>
                                 </div>
+                                <div class="col-12 text-center p-0 col-md-4 mb-5text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/ilc-min.jpeg); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2"> ILC Group</h5>
+                                </div>
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/productiontrade-min.jpg); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">Production&Trade</h5>
+                                </div>
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/silver-min.jpg); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">Silver Poste Private</h5>
+                                </div>   
+                                <div class="col-12 text-center p-0 col-md-4 mb-5 text-start">
+                                    <div class="boxImageCard" style="background-image: url(./media/progetti/queen-min.jpeg); background-position: top;background-size: cover;"></div>
+                                    <h5 class="text-black p-0 mt-2">QueenCoffee</h5>
+                                </div>        
+                                                            
                             </div>
                         </div>
-                        <!-- CONTATTO -->
-                        <div id="contatto" class="col-12 d-none text-center">
-                            <div class="container-fluid ">
-                                <div class="row align-items-start mb-5 text-start">
-                                    <h3>Contatto <span class="infotext"></span></h3>
-                                </div>
-                                <div class="row mb-5 text-start">
-                                    <div class="col-4 p-3 ">
-                                        <div class="boxContact py-2 text-center">
-                                            <i class="bi fs-1 text-blue  bi-geo-alt"></i>
-                                            <h6 class="pt-3">Napoli,Italia</h6>
-                                        </div>
-                                        <div class="boxContact py-2 text-center">
-                                            <i class="bi fs-1 text-blue  bi-telephone"></i>
-                                            <h6 class="pt-3">+39 3663750354</h6>
-                                        </div>
-                                        <div class="boxContact py-2 text-center">
-                                            <i class="bi fs-1 text-blue  bi-envelope"></i>
-                                            <h6 class="pt-3">davideimperato95<br>@gmail.com</h6>
-                                        </div>
+                    </div>
+                    <!-- CONTATTO -->
+                    <div id="contatto" class="col-12 d-none text-center">
+                        <div class="container-fluid ">
+                            <div class="row align-items-start mb-5 text-start">
+                                <h3>Contatto <span class="infotext"></span></h3>
+                            </div>
+                            <div class="row mb-5 text-start">
+                                <div class="col-4 p-3 ">
+                                    <div class="boxContact py-2 text-center">
+                                        <i class="bi fs-1 text-blue  bi-geo-alt"></i>
+                                        <h6 class="pt-3">Napoli,Italia</h6>
                                     </div>
-                                    <div class="col-8 text-center  p-3 mb-5 text-start">
-                                        <form id="emailForm">
-                                            <div class="row">
-                                                <div class="col-12"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.0271869160024!2d14.326394899999999!3d40.8493269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133ba7cea3c8353d%3A0xb847787936573830!2sVia%20Luigi%20Volpicella%2C%20384%2C%2080147%20Napoli%20NA!5e0!3m2!1sit!2sit!4v1696500564082!5m2!1sit!2sit" width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6 pt-5">
-                                                    <input class="form-control" type="text" id="nome" placeholder="Nome" name="nome" required><br>
-
-                                                    <input class="form-control" type="email" id="email" placeholder="email" name="email" required><br>
-                                                    <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" value="+39" required><br>
-                                                </div>
-                                                <div class="col-6 pt-5">
-                                                    <textarea class="form-control" id="messaggio" name="messaggio" placeholder="Messaggio" rows="6" required></textarea><br></div>
-                                            </div>
-
-                                            <input class="btn btnCustom" type="submit" value="Invia">
-                                          </form>
-                                    </div>                              
+                                    <div class="boxContact py-2 text-center">
+                                        <i class="bi fs-1 text-blue  bi-telephone"></i>
+                                        <h6 class="pt-3">+39 3663750354</h6>
+                                    </div>
+                                    <div class="boxContact py-2 text-center">
+                                        <i class="bi fs-1 text-blue  bi-envelope"></i>
+                                        <h6 class="pt-3">davideimperato95<br>@gmail.com</h6>
+                                    </div>
                                 </div>
+                                <div class="col-8 text-center  p-3 mb-5 text-start">
+                                    <form id="emailForm">
+                                        <div class="row">
+                                            <div class="col-12"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.0271869160024!2d14.326394899999999!3d40.8493269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133ba7cea3c8353d%3A0xb847787936573830!2sVia%20Luigi%20Volpicella%2C%20384%2C%2080147%20Napoli%20NA!5e0!3m2!1sit!2sit!4v1696500564082!5m2!1sit!2sit" width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 pt-5">
+                                                <input class="form-control" type="text" id="nome" placeholder="Nome" name="nome" required><br>
+
+                                                <input class="form-control" type="email" id="email" placeholder="email" name="email" required><br>
+                                                <input class="form-control" type="number" id="telefono" name="telefono" placeholder="Telefono" value="+39" required><br>
+                                            </div>
+                                            <div class="col-6 pt-5">
+                                                <textarea class="form-control" id="messaggio" name="messaggio" placeholder="Messaggio" rows="6" required></textarea><br></div>
+                                        </div>
+
+                                        <input class="btn btnCustom" type="submit" value="Invia">
+                                        </form>
+                                </div>                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
     
     
     
@@ -656,6 +1104,10 @@
         let testo1 = document.querySelector('#testo1');
         let testo2 = document.querySelector('#testo2');
         let testo3 = document.querySelector('#testo3');
+
+        let testo1mob = document.querySelector('#testo1mob');
+        let testo2mob = document.querySelector('#testo2mob');
+        let testo3mob = document.querySelector('#testo3mob');
 
         let btnHome = document.querySelector('#btnHome');
         let btnSudime = document.querySelector('#btnSudime');
@@ -669,11 +1121,63 @@
         let progetti = document.querySelector('#progetti');
         let contatto = document.querySelector('#contatto')
 
+        let btnHomeMob = document.querySelector('#btnHomeMob');
+        let btnSudimeMob = document.querySelector('#btnSudimeMob');
+        let btnRiassuntoMob = document.querySelector('#btnRiassuntoMob');
+        let btnProgettiMob = document.querySelector('#btnProgettiMob');
+        let btnContattiMob= document.querySelector('#btnContattiMob');
 
+        let homeMob= document.querySelector('#homeMob');
+        let chisonoMob = document.querySelector('#chisonoMob');
+        let riassuntoMob = document.querySelector('#riassuntoMob');
+        let progettiMob = document.querySelector('#progettiMob');
+        let contattoMob = document.querySelector('#contattoMob')
+
+
+        let mobile = document.querySelector('#mobile');
+        let desktop = document.querySelector('#desktop');
+        
+        let menuMobile=document.querySelector('#menuMobile');
+        let menuBtnMobile=document.querySelector('#menuBtnMobile');
+        let iconMenuMobile = document.querySelector('#iconMenuMobile');
 
         
         //FUNZIONE LOOP TESTO HOME
-        function mostraENascondi(elementoDaMostrare, elementoDaNascondere1,elementoDaNascondere2, tempo) {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+
+            mobile.classList.remove('d-none');
+            desktop.classList.add('d-none');
+
+
+            //FUNZIONE LOOP TESTO HOME MOBILE
+        function mostraENascondiMob(elementoDaMostrare, elementoDaNascondere1,elementoDaNascondere2, tempo) {
+            setTimeout(function () {
+                elementoDaNascondere1.classList.add('d-none');
+                elementoDaNascondere2.classList.add('d-none');
+                elementoDaMostrare.classList.remove('d-none');
+            }, tempo);
+        }
+        
+        
+        function loopMob() {
+            mostraENascondiMob(testo1mob, testo2mob,testo3mob, 0); 
+            mostraENascondiMob(testo2mob, testo1mob,testo3mob, 4000); 
+            mostraENascondiMob(testo3mob, testo2mob,testo1mob, 8000); 
+            setTimeout(loop, 8000); 
+        }
+        
+        loopMob();
+
+        
+
+
+        } else {
+
+            mobile.classList.add('d-none');
+            desktop.classList.remove('d-none');
+
+
+            function mostraENascondi(elementoDaMostrare, elementoDaNascondere1,elementoDaNascondere2, tempo) {
             setTimeout(function () {
                 elementoDaNascondere1.classList.add('d-none');
                 elementoDaNascondere2.classList.add('d-none');
@@ -690,6 +1194,32 @@
         }
         
         loop();
+        }
+
+        let check = false;
+
+        menuBtnMobile.addEventListener('click',()=>{
+            if(check == false){
+                openMenu()
+            } else {
+                closeMenu()
+            }
+            
+        })
+
+        function openMenu(){
+                menuMobile.classList.remove('d-none');
+                iconMenuMobile.classList.remove('bi-list');
+                iconMenuMobile.classList.add('bi-x');
+                check = true
+            }
+        function closeMenu(){
+                menuMobile.classList.add('d-none');
+                iconMenuMobile.classList.add('bi-list');
+                iconMenuMobile.classList.remove('bi-x');
+                check = false
+        }
+        
         
         //FUNZIONE PER CALCOLARE L'ETA'
         
@@ -714,6 +1244,7 @@
             btnProgetti.classList.remove('active')
             contatto.classList.add('d-none')
             btnContatti.classList.remove('active')
+
         })
         btnSudime.addEventListener('click',()=>{
             home.classList.add('d-none')
@@ -726,6 +1257,7 @@
             btnProgetti.classList.remove('active')
             contatto.classList.add('d-none')
             btnContatti.classList.remove('active')
+
         })
         btnRiassunto.addEventListener('click',()=>{
             home.classList.add('d-none')
@@ -738,6 +1270,8 @@
             btnProgetti.classList.remove('active')
             contatto.classList.add('d-none')
             btnContatti.classList.remove('active')
+
+
         })
         btnProgetti.addEventListener('click',()=>{
             home.classList.add('d-none')
@@ -750,6 +1284,8 @@
             btnProgetti.classList.add('active')
             contatto.classList.add('d-none')
             btnContatti.classList.remove('active')
+
+
         })
         btnContatti.addEventListener('click',()=>{
             home.classList.add('d-none')
@@ -762,7 +1298,83 @@
             btnProgetti.classList.remove('active')
             contatto.classList.remove('d-none')
             btnContatti.classList.add('active')
+
+
         })
+
+        // MOBILE MENU
+
+        btnHomeMob.addEventListener('click',()=>{
+            homeMob.classList.remove('d-none')
+            btnHomeMob.classList.add('active')
+            chisonoMob.classList.add('d-none')
+            btnSudimeMob.classList.remove('active')
+            riassuntoMob.classList.add('d-none')
+            btnRiassuntoMob.classList.remove('active')
+            progettiMob.classList.add('d-none')
+            btnProgettiMob.classList.remove('active')
+            contattoMob.classList.add('d-none')
+            btnContattiMob.classList.remove('active')
+            closeMenu()
+
+        })
+        btnSudimeMob.addEventListener('click',()=>{
+            homeMob.classList.add('d-none')
+            btnHomeMob.classList.remove('active')
+            chisonoMob.classList.remove('d-none')
+            btnSudimeMob.classList.add('active')
+            riassuntoMob.classList.add('d-none')
+            btnRiassuntoMob.classList.remove('active')
+            progettiMob.classList.add('d-none')
+            btnProgettiMob.classList.remove('active')
+            contattoMob.classList.add('d-none')
+            btnContattiMob.classList.remove('active')
+            closeMenu()
+
+        })
+        btnRiassuntoMob.addEventListener('click',()=>{
+            homeMob.classList.add('d-none')
+            btnHomeMob.classList.remove('active')
+            chisonoMob.classList.add('d-none')
+            btnSudimeMob.classList.remove('active')
+            riassuntoMob.classList.remove('d-none')
+            btnRiassuntoMob.classList.add('active')
+            progettiMob.classList.add('d-none')
+            btnProgettiMob.classList.remove('active')
+            contattoMob.classList.add('d-none')
+            btnContattiMob.classList.remove('active')
+            closeMenu()
+
+        })
+        btnProgettiMob.addEventListener('click',()=>{
+            homeMob.classList.add('d-none')
+            btnHomeMob.classList.remove('active')
+            chisonoMob.classList.add('d-none')
+            btnSudimeMob.classList.remove('active')
+            riassuntoMob.classList.add('d-none')
+            btnRiassuntoMob.classList.remove('active')
+            progettiMob.classList.remove('d-none')
+            btnProgettiMob.classList.add('active')
+            contattoMob.classList.add('d-none')
+            btnContattiMob.classList.remove('active')
+            closeMenu()
+
+        })
+        btnContattiMob.addEventListener('click',()=>{
+            homeMob.classList.add('d-none')
+            btnHomeMob.classList.remove('active')
+            chisonoMob.classList.add('d-none')
+            btnSudimeMob.classList.remove('active')
+            riassuntoMob.classList.add('d-none')
+            btnRiassuntoMob.classList.remove('active')
+            progettiMob.classList.add('d-none')
+            btnProgettiMob.classList.remove('active')
+            contattoMob.classList.remove('d-none')
+            btnContattiMob.classList.add('active')
+            closeMenu()
+
+        })
+
 
         document.getElementById("emailForm").addEventListener("submit", function(event) {
             event.preventDefault();
